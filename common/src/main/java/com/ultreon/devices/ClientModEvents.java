@@ -195,8 +195,8 @@ public class ClientModEvents {
                 if (DebugFlags.DUMP_APP_ICON_ATLAS) {
                     try {
                         DebugUtils.dump(DumpType.ATLAS, Laptop.ICON_TEXTURES, (stream) -> ImageIO.write(atlas, "png", stream));
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        LOGGER.warn("Failed to dump app icon atlas debug texture.", e);
                     }
                 }
 
